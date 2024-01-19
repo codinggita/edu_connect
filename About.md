@@ -1,6 +1,6 @@
 # Project Initial Report
 
-## Add your Name & Registration Number
+## Name & Registration Number
 ## Pramit Kumar Dubey (12111903)
 
 ### Project Name: EduConnect
