@@ -31,15 +31,15 @@
 - List of features you want to implement.
 
   - [Add all the possible feature that comes to your mind, take inspiration from existing solution on what's alrady done right, along with how you can make it better.]
-   - Login & Signup
-   - Profile 
-   - Schedule Tab 
-   - Course Catalog
-   - Doubt pannel
-   - Chat, Videocall & Voicecall
-   - Search
-   - Real-time Collaboration Board
-   - Tests 
-   - Assessments and Feedbacks
-   - Discussion Forums
-   - Progress Tracking
+  - Login & Signup
+  - Profile 
+  - Schedule Tab 
+  - Course Catalog
+  - Doubt pannel
+  - Chat, Videocall & Voicecall
+  - Search
+  - Real-time Collaboration Board
+  - Tests 
+  - Assessments and Feedbacks
+  - Discussion Forums
+  - Progress Tracking
