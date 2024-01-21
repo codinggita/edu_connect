@@ -69,7 +69,7 @@
   - Moderation and Reporting: Moderation tools to monitor content and interactions for inappropriate or unsafe behavior.
    Reporting mechanisms for users to flag concerns.
 
-  - A simplified and generalized flowchart to illustrate how some of these features might be connected in a typical interaction flow on - this platform. 
+  - A simplified and generalized flowchart to illustrate how some of these features might be connected in a typical interaction flow on this platform. 
 
                                           +------------------------+
                                           |      Start             |
