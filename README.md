@@ -7,6 +7,14 @@
 
 ### Project Name: EduConnect
 
+#### API's documentation for different features: 
+#### Profile: https://documenter.getpostman.com/view/29753054/2s9YymGjR4
+#### Course: https://documenter.getpostman.com/view/29753054/2s9YymGjR1
+#### Mentorship: https://documenter.getpostman.com/view/29753054/2s9YymGjR3
+#### Schedule: https://documenter.getpostman.com/view/29753054/2s9YymGjR5
+#### Assesments: https://documenter.getpostman.com/view/29753054/2s9YymGjLf
+
+
 - Which problem Project is Solving?
 
   - [Give descriptive answer here.]
