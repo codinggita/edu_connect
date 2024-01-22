@@ -24,7 +24,7 @@ const test = [{
     difficulty: "medium"
 
 }, {
-    name: "Aptitude",
+    name: "EE",
     test_id: 4,
     duration: "2 hrs",
     difficulty: "medium"
@@ -36,19 +36,21 @@ const test = [{
     difficulty: "easy"
 
 }, {
-    name: "Aptitude",
+    name: "Maths",
     test_id: 6,
     duration: "2 hrs",
-    difficulty: "difficulty"
+    difficulty: "difficult"
 
 },]
 
+// GET - List all tests
 app.get("/tests", (req, res) => {
     res.json(test);
 });
 
+// GET - Details of a tests course by name
 app.get("/tests/:name", (req, res) => {
-    const tests = tests.find((c) => c.name === req.params.courseName);
+    const tests = test.find((c) => c.name === req.params.name);
     if (!tests) {
         res.status(404).send("Test not found");
     } else {
@@ -56,11 +58,55 @@ app.get("/tests/:name", (req, res) => {
     }
 });
 
+// POST - Create a new tests
 app.post("/tests", (req, res) => {
     test.push(req.body);
-    res.send("Test added");
+    res.send("Tests added");
 });
 
+// PUT - Modify information of a tests
+app.put("/tests/:name", (req, res) => {
+    const index = test.findIndex(
+        (c) => c.name === req.params.name
+    );
+    if (index === -1) {
+        res.status(404).send("Test not found");
+    } else {
+        test[index] = { ...test[index], ...req.body };
+        res.send("Test updated");
+    }
+});
+
+// PATCH - Update partial information of a tests
+app.patch("/tests/:name", (req, res) => {
+    const index = test.findIndex(
+        (c) => c.name === req.params.name
+    );
+    if (index === -1) {
+        res.status(404).send("Test not found");
+    } else {
+        const testToUpdate = test[index];
+        // Update specific fields if they exist in the request body
+        if (req.body.name) testToUpdate.name = req.body.name;
+        if (req.body.duration) testToUpdate.duration = req.body.duration;
+        if (req.body.difficulty) testToUpdate.difficulty = req.body.difficulty;
+
+        res.send("Test partially updated");
+    }
+});
+
+// DELETE - Remove a course by tests
+app.delete("/tests/:name", (req, res) => {
+    const index = test.findIndex(
+        (c) => c.name === req.params.name
+    );
+    if (index === -1) {
+        res.status(404).send("Test not found");
+    } else {
+        test.splice(index, 1);
+        res.send("Test deleted");
+    }
+});
 
 
 app.get("/*", (req, res) => {
