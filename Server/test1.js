@@ -49,7 +49,7 @@ app.put("/students/:uid",(req,res)=>{
 
 })
 
-app.patch("students/:uid",(req,res)=>{
+app.patch("students/v1/:uid",(req,res)=>{
     const index=students.findIndex((c)=>c.uid===req.params.uid)
     if(index===-1){
         res.status(404).send("No student found")
@@ -62,7 +62,7 @@ app.patch("students/:uid",(req,res)=>{
     }
 })
 
-app.delete("/students/:uid",(req,res)=>{
+app.delete("/students/d1/:uid",(req,res)=>{
     const index=students.findIndex((c)=>c.uid===req.params.uid)
     if(index===-1){
         res.status(404).send("No student found")
