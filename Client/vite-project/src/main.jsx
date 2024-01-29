@@ -5,14 +5,15 @@ import './index.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
+import Table from "./html/Table.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
   <Navbar/>
   
   <Routes>
-        <Route path="/userdata" element={<App/>} /> 
-        <Route path="/*" element={<p>No routes found here.</p>} /> 
+        <Route path="/userdata" element={<App/>} />
+        <Route path="/schedule" element={<Table/>} />  
     </Routes>
     <Footer/>
   </BrowserRouter>

@@ -3,10 +3,13 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+
 function App() {
 
   return (
-    <div>Hello World!</div>
+    <div>
+      <p>This is main page</p>
+    </div>
 
   )
 }
