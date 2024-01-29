@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const app=express()
 app.use(express.json())
 
-const uri = "mongodb+srv://user_01:4pQFgKNoL5LGS5rr@cluster0.2aepu2v.mongodb.net/?retryWrites=true&w=majority/Students";
+const uri = "mongodb+srv://user_01:4pQFgKNoL5LGS5rr@cluster0.2aepu2v.mongodb.net/Students?retryWrites=true&w=majority";
 mongoose.connect(uri);
 
 const db = mongoose.connection;

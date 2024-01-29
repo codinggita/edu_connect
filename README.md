@@ -11,6 +11,10 @@
 
 ### Deployed in render: https://edu-connect-pr.onrender.com
 
+### Figma Design Link: https://www.figma.com/file/av8dMDoXAdtqC6tyNxGwdH/Edu-Connect?type=design&node-id=0%3A1&mode=design&t=2HlXrbXXVTdlu6tj-1
+
+
+
 
 - Which problem Project is Solving?
 
@@ -74,76 +78,6 @@
   - Moderation and Reporting: Moderation tools to monitor content and interactions for inappropriate or unsafe behavior.
    Reporting mechanisms for users to flag concerns.
 
-  - A simplified and generalized flowchart to illustrate how some of these features might be connected in a typical interaction flow on this platform. 
-
-                                          +------------------------+
-                                          |      Start             |
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |  User Registers/Login  |
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |  Create/Edit Profile   |
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |   Browse Subjects/Skills|
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |    Find Mentor/Learner  |
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |   Request/Accept Mentorship|
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |    Schedule Session    |
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |     Conduct Session    |
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |   Collaborative Tools  |
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |    Share Resources     |
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |   Take/Grade Assessments|
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |   Track Progress        |
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |   Receive Feedback     |
-                                          +------------------------+
-                                                    |
-                                                    v
-                                          +------------------------+
-                                          |  End                   |
-                                          +------------------------+
 
   
 
