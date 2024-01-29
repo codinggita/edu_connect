@@ -46,19 +46,6 @@ app.get("/students",async(req,res)=>{
     }
 })
 
-// app.post("/students",async(req,res)=>{
-//     try{
-//         const data=await StudentDocument.findOne()
-//         data.push(req.body)
-//         await data.save()
-//         res.status(201).send("Course sucessfully added")
-
-//     }
-//     catch(error){
-//         res.status(500).send(error)
-//     }
-// })
-
 // Create a route for adding a new student data
 app.post("/students", async (req, res) => {
     try {
