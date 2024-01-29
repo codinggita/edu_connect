@@ -11,9 +11,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Navbar/>
   
   <Routes>
-        <Route path="/userdata" elements={<App/>} /> 
-        <Route path="/*" elements={<p>No routes found here.</p>} /> 
+        <Route path="/userdata" element={<App/>} /> 
+        <Route path="/*" element={<p>No routes found here.</p>} /> 
     </Routes>
     <Footer/>
-  </BrowserRouter>,
+  </BrowserRouter>
 )
