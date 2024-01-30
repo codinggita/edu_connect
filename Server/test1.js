@@ -1,76 +1,140 @@
 import express  from "express";
+import mongoose from "mongoose";
+
 const app=express()
 app.use(express.json())
 
-const students=[{
-    uid:1,
-    sem1:7,
-    sem2:7.5,
-    cgpa:7.25,
+const uri = "mongodb+srv://user_01:<password>@cluster0.2aepu2v.mongodb.net/Students?retryWrites=true&w=majority";
+mongoose.connect(uri);
 
-},{
-    uid:2,
-    sem1:8,
-    sem2:7.5,
-    cgpa:7.75,
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-},{
-    uid:3,
-    sem1:7,
-    sem2:7,
-    cgpa:7,
+const StudentSchema = new mongoose.Schema({
+    uid:{
+        type:Number,
+        required:true,
+        unique:true,
+    },
+    sem1:{
+        type:Number,
+        required:true,
+        
+    },
+    sem2:{
+        type:Number,
+        required:true,
+        
+    },
+    cgpa:{
+        type:Number,
+        required:true,
+       
+    },
+});
+  
+const StudentDocument = mongoose.model("StudentCgpa", StudentSchema,"StudentCgpa");
 
-},{
-    uid:4,
-    sem1:8,
-    sem2:7,
-    cgpa:7.5,
-
-},]
-
-app.get("/students",(req,res)=>{
-    res.json(students)
-})
-
-app.post("/students",(req,res)=>{
-    students.push(req.body);
-    res.send("Student added")
-})
-
-app.put("/students/:uid",(req,res)=>{
-    const index=students.findIndex((c)=>c.uid===req.params.uid)
-    if(index===-1){
-        res.status(404).send("No student found")
+app.get("/students",async(req,res)=>{
+    try{
+        const data=await StudentDocument.find()
+        res.json(data)
     }
-    else{
-        students[index]={...students[index],...req.body}
-        res.send("Student deatils updated")
-    }
+    catch(error){
+        res.status(500).send(error)
 
-})
-
-app.patch("students/v1/:uid",(req,res)=>{
-    const index=students.findIndex((c)=>c.uid===req.params.uid)
-    if(index===-1){
-        res.status(404).send("No student found")
-    }
-    else{
-        const studentToUpdate=students[index]
-        if(req.body.uid) studentToUpdate.uid=req.body.uid;
-        if(req.body.sem1) studentToUpdate.sem1=req.body.sem1;
-        res.send("Student deatils partially updated")
     }
 })
 
-app.delete("/students/d1/:uid",(req,res)=>{
-    const index=students.findIndex((c)=>c.uid===req.params.uid)
-    if(index===-1){
-        res.status(404).send("No student found")
+// Create a route for adding a new student data
+app.post("/students", async (req, res) => {
+    try {
+      // Get the data from the req.body
+      const { uid, sem1, sem2, cgpa } = req.body;
+  
+      // Create a new document with the data
+      const newStudent = new StudentDocument({
+        uid,
+        sem1,
+        sem2,
+        cgpa,
+      });
+  
+      // Save the new document to the database
+      await newStudent.save();
+  
+      // Send a success message
+      res.status(201).json({ message: "Student data added successfully" });
+    } catch (error) {
+      // Handle any errors
+      res.status(500).send(error);
     }
-    else{
-        students.splice(index,1)
-        res.send("Student deleted")
+  });
+  
 
+app.put("/students/:uid", async (req, res) => {
+    try {
+        const  uid  = req.params.uid; 
+        const updatedInfo = req.body; 
+
+        
+        const existingStudent = await StudentDocument.findOne({ uid: uid });
+
+        if (existingStudent) {
+            
+            await StudentDocument.updateOne({ uid: uid }, { $set: updatedInfo });
+            res.status(200).send("Student information updated successfully");
+        } else {
+            res.status(404).send("Student record not found");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).send(error);
+    }
+});
+
+app.patch("students/v1/:uid",async(req,res)=>{
+    try{
+        const  uid  = req.params.uid; 
+        const updatedInfo = req.body; 
+
+        
+        const updatedStudent = await StudentDocument.findOneAndUpdate(
+            { uid: uid },
+            { $set: updatedInfo }, // Set the updated information
+            { new: true } // Return the updated document
+        );
+
+        if (!updatedStudent) {
+            return res.status(404).send("Student not found");
+        }
+
+        res.status(200).json(updatedStudent);
+
+    }
+    catch(error){
+        console.error("Error:", error);
+        res.status(500).send(error);
+
+    }
+})
+
+app.delete("/students/d1/:uid",async(req,res)=>{
+    try {
+        const  uid  = req.params.uid; 
+
+        const existingStudent = await StudentDocument.findOne({ uid: uid });
+
+        if (existingStudent) {
+            
+            await StudentDocument.deleteOneOne({ uid: uid });
+            res.status(200).send("Student information updated successfully");
+        } else {
+            res.status(404).send("Student record not found");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).send(error);
     }
  
 })

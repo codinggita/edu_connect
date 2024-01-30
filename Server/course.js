@@ -151,7 +151,7 @@ const app = express();
 app.use(express.json());
 
 // Replace with your MongoDB connection string
-const uri = "mongodb://127.0.0.1:27017/Courses";
+const uri = "mongodb://localhost:27017/Courses";
 mongoose.connect(uri);
 
 const db = mongoose.connection;
@@ -173,7 +173,7 @@ const CourseSchema = new mongoose.Schema({
   ],
 });
 
-const CoursesDocument = mongoose.model("Subjects", CourseSchema);
+const CoursesDocument = mongoose.model("subjects", CourseSchema);
 
 // Routes
 app.get("/courses", async (req, res) => {
@@ -217,7 +217,7 @@ app.post("/courses", async (req, res) => {
 });
 
 // Start the server
-const PORT = 3000;
+const PORT = 8000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
