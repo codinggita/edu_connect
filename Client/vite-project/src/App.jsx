@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Navbar from './Components/MUINavbar/Navbar.jsx';
+
+
 
 
 function App() {
 
   return (
-    <div>
-      <p>This is main page</p>
+    <div className='App'>
+        <Navbar/>
+
     </div>
+   
 
   )
 }
