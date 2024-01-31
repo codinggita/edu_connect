@@ -9,13 +9,14 @@ import UserProfilePage from './Components/UserProfileCard/UserProfilePage.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-  {/* <Navbar/> */}
+  <Navbar/>
   
   <Routes>
         <Route path="/userdata" element={<App/>} />
         <Route path="/schedule" element={<Table/>} />
-        <Route path="/profile" element={<UserProfilePage/>} />  
+        <Route path="/profile" element={<UserProfilePage/>} />
+        <Route path="/navbar" element={<Navbar/>} />  
     </Routes>
-    {/* <Footer/> */}
+    
   </BrowserRouter>
 )
