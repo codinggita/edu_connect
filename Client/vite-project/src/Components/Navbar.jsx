@@ -1,10 +1,12 @@
 import React from 'react'
 import {AppBar, Toolbar, IconButton, Typography, Stack, Button,Box} from '@mui/material'
 import Diversity2Icon from '@mui/icons-material/Diversity2';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-      <AppBar position="static">
+    
+    <AppBar position="static">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
 
         <Box sx={{ display: 'flex', alignItems: 'center' }}> {/* Container for logo and title */}
@@ -16,16 +18,19 @@ const Navbar = () => {
           </Typography>
         </Box>
 
-          <Stack direction='row' spacing={2}>
-            <Button color='inherit'>Features</Button>
-            <Button color='inherit'>Pricing</Button>
-            <Button color='inherit'>About</Button>
-            <Button color='inherit'>Login</Button>
-          </Stack>
+        <Stack direction='row' spacing={2}>
+            <Button color='inherit'><Link to="/feature">Features</Link></Button>
+            <Button color='inherit'><Link to="/pricing">Pricing</Link></Button>
+            <Button color='inherit'><Link to="/about">About</Link></Button>
+            <Button color='inherit'><Link to="/login">Login</Link></Button>
+        </Stack>
+          
+
           
         </Toolbar>
       </AppBar>
-  )
+    
+    )
 }
 
 export default Navbar

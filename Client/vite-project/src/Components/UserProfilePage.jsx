@@ -1,7 +1,7 @@
 import React from 'react'
 import './UserProfilePage.css'
-import profileImage from '../Assests/mahdi-chaghari-lj6pLukQesg-unsplash.jpg'
-import profileImage1 from '../Assests/mitchell-orr-b6LQ3AQEcFc-unsplash.jpg'
+import profileImage from './Assests/mahdi-chaghari-lj6pLukQesg-unsplash.jpg'
+import profileImage1 from './Assests/mitchell-orr-b6LQ3AQEcFc-unsplash.jpg'
 
 const UserProfilePage = () => {
   return (
