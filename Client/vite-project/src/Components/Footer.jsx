@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography} from '@mui/material';
+import { Container,Grid,Link, Typography} from '@mui/material';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import RestoreIcon from '@mui/icons-material/Restore';
@@ -9,36 +9,56 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const Footer = () => {
 
-  const [value, setValue] = React.useState(0);
+  const footers = [
+    {
+      title: 'Company',
+      description: ['Team', 'History', 'Contact us', 'Locations'],
+    },
+    {
+      title: 'Features',
+      description: [
+        'Cool stuff',
+        'Random feature',
+        'Team feature',
+        'Developer stuff',
+        'Another one',
+      ],
+    },
+    {
+      title: 'Resources',
+      description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
+    },
+  ];
 
     return (
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-
-      </Box>
-    //   <Box sx={{ width: 500 }}>
-    //   <BottomNavigation
-    //     showLabels
-    //     value={value}
-    //     onChange={(event, newValue) => {
-    //       setValue(newValue);
-    //     }}
-    //   >
-    //     <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-    //     <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-    //     <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
-    //   </BottomNavigation>
-    // </Box>
+      <Container
+        maxWidth="md"
+        component="footer"
+        sx={{
+          borderTop: (theme) => `1px solid ${theme.palette.divider}`,
+          mt: 8,
+          py: [3, 6],
+        }}
+      >
+        <Grid container spacing={4} justifyContent="space-evenly">
+          {footers.map((footer) => (
+            <Grid item xs={6} sm={3} key={footer.title}>
+              <Typography variant="h6" color="text.primary" gutterBottom>
+                {footer.title}
+              </Typography>
+              <ul>
+                {footer.description.map((item) => (
+                  <li key={item}>
+                    <Link href="#" variant="subtitle1" color="text.secondary">
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
   );
   };
 

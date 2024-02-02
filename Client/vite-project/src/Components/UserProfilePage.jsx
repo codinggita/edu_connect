@@ -11,7 +11,7 @@ const UserProfilePage = () => {
         </div>
         <div className="profile-down">
             <img src={profileImage} alt="User Profile" />
-            <div className="profile-title">Mahdi Chaghari</div>
+            <div className="profile-title">Amon</div>
             <div className="profile-description">
 
             Hello there! I'm Amon, a third-year college student with a passion for MERN development, communication, and photography. I love diving into MERN Technology to create innovative web applications. With clear communication skills, I thrive in collaborative environments. My photography reflects my artistic eye and storytelling abilities. Engaged in extracurriculars, I'm dedicated to personal growth and community impact. Join me on this exciting journey!            </div>
