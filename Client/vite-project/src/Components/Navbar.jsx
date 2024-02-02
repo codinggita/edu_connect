@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     
-    <AppBar position="static">
+    <AppBar  color="primary">
         <Toolbar sx={{ justifyContent: 'space-between' }}>
 
         <Box sx={{ display: 'flex', alignItems: 'center' }}> {/* Container for logo and title */}

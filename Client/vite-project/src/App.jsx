@@ -9,6 +9,7 @@ import Login from "./Components/Login.jsx";
 import Pricing from "./Components/Pricing.jsx";
 import About from "./Components/About.jsx";
 import Footer from "./Components/Footer.jsx";
+import Home from "./Components/Home.jsx";
 
 
 
@@ -16,17 +17,16 @@ function App() {
 
   return (
     <BrowserRouter>
-    <Navbar/>
+    
     
     <Routes>
+        <Route path="/" element={<Home/>} />
         <Route path="/feature" element={<Feature/>}/>
         <Route path="/pricing" element={<Pricing/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/login" element={<Login/>}/>
     </Routes>
 
-    <Footer/>
-      
     </BrowserRouter>
     
    
