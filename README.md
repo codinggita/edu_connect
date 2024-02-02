@@ -11,6 +11,8 @@
 
 ### Render deployed link: https://edu-connect-pr.onrender.com
 
+### Netlify deployed link: https://educonnectlive.netlify.app/
+
 ### Netlify deployed link: https://educonnect-mui.netlify.app/
 
 ### Figma Design Link: https://www.figma.com/file/av8dMDoXAdtqC6tyNxGwdH/Edu-Connect?type=design&node-id=0%3A1&mode=design&t=2HlXrbXXVTdlu6tj-1
