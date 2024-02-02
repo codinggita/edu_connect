@@ -13,9 +13,9 @@ const Navbar = () => {
           <IconButton size="large" edge="start" color="inherit" aria-label="logo">
             <Diversity2Icon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ ml: 1 }}> {/* Add left margin for spacing */}
-            EDUCONNECT
-          </Typography>
+          <Button color="inherit" sx={{ fontSize: 18, ml: 1 }}><Link to="/">EDUCONNECT</Link>
+            
+          </Button>
         </Box>
 
         <Stack direction='row' spacing={2}>

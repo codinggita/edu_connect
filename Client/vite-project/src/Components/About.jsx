@@ -1,6 +1,7 @@
 import React from 'react'
 import {Typography,Box,Stack, Button, AppBar,Card,CardActions, CardMedia,CssBaseline,Grid,Toolbar,Container} from '@mui/material'
 import UserProfilePage from './UserProfilePage'
+import Navbar from './Navbar'
 
 
 const About = () => {
@@ -19,6 +20,7 @@ const About = () => {
         </Container>
       </div>
     </main> */}
+    <Navbar/>
     <Box sx={{
             bgcolor: 'background.paper',
             pt: 8,

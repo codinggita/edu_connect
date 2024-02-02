@@ -1,10 +1,14 @@
 import React from 'react'
 import Grid from '@mui/material/Grid';
+import Navbar from './Navbar';
 
 
 const Pricing = () => {
   return (
+    <>
+   
     <div>
+    <Navbar/>
       <Grid container component="main" sx={{ height: '100vh' }}>
       <Grid
           item
@@ -25,6 +29,7 @@ const Pricing = () => {
         
       
     </div>
+    </>
   )
 }
 
