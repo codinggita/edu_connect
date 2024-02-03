@@ -1,7 +1,6 @@
 import React from "react";
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Feature from "./Components/Feature.jsx";
 import Login from "./Components/Login.jsx";
 import Pricing from "./Components/Pricing.jsx";
 import About from "./Components/About.jsx";
