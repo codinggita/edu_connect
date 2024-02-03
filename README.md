@@ -11,7 +11,7 @@
 
 ### Render deployed link: https://edu-connect-pr.onrender.com
 
-### Netlify continuous deployed link: https://educonnectlive.netlify.app/
+### Netlify continuous deployed link: https://educonnectme.netlify.app/
 
 ### Netlify deployed link: https://educonnect-mui.netlify.app/
 
