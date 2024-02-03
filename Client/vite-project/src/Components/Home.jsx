@@ -4,14 +4,39 @@ import Footer from './Footer'
 import Grid from '@mui/material/Grid';
 import Box  from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { CssBaseline, Stack, Card, CardMedia, CardContent, CardActions } from '@mui/material';
+import { CssBaseline, Stack, Card, CardHeader, CardContent, CardActions } from '@mui/material';
 import {Container} from '@mui/material';
 import {Button} from '@mui/material';
+
+
+const tiers = [
+  {
+    title: 'Personalized Learning',
+    price: 'Students practice at their own pace, first filling in gaps in their understanding and then accelerating their learning.',
+    buttonText: 'Sign up for free',
+    buttonVariant: 'outlined',
+  },
+  {
+    title: 'Trusted Content',
+    subheader: '',
+    price: 'Created by experts, Edu Connect’s library of trusted, standards-aligned practice and lessons covers through early college, grammar, science, history, and more. It’s all free for learners and teachers.',
+    buttonText: 'Get started',
+    buttonVariant: 'contained',
+  },
+  {
+    title: 'Empower Teachers',
+    price: 'With Edu Connect, teachers can identify gaps in their students’ understanding, tailor instruction, and meet the needs of every student.',
+    buttonText: 'Contact us',
+    buttonVariant: 'outlined',
+  },
+];
 
 const Home = () => {
   return (
     <div>
       <Navbar/>
+
+      {/* main page */}
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline/>
       <Grid
@@ -68,55 +93,50 @@ const Home = () => {
           </Grid>
           </Grid>
 
-          <Container sx={{py: 8}} maxWidth="md" >
-          <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} md={4}>
-               <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                 <CardMedia 
-                 component="div"
-                 sx={{
-                   // 16:9
-                   pt: '56.25%',
-                 }}
-                 image="http://source.unsplash.com/random"
-                 title="Image title"
-                 />
-                 <CardContent sx={{ flexGrow: 1 }}>
-                   <Typography gutterBottom variant="h5">Heading</Typography>
-                   <Typography>This is cardMedia</Typography>
-                 </CardContent>
-                 <CardActions>
-                   <Button size="small" color="primary">View</Button>
-                   <Button size="small" color="primary">Edit</Button>
-                 </CardActions>
- 
-               </Card>
-             </Grid>
-             <Grid item xs={12} sm={6} md={4}>
-               <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                 <CardMedia 
-                 component="div"
-                 sx={{
-                   // 16:9
-                   pt: '56.25%',
-                 }}
-                 image="http://source.unsplash.com/random"
-                 title="Image title"
-                 />
-                 <CardContent sx={{ flexGrow: 1 }}>
-                   <Typography gutterBottom variant="h5">Heading</Typography>
-                   <Typography>This is cardMedia</Typography>
-                 </CardContent>
-                 <CardActions>
-                   <Button size="small" color="primary">View</Button>
-                   <Button size="small" color="primary">Edit</Button>
-                 </CardActions>
- 
-               </Card>
-             </Grid>
-           
-          </Grid>
-        </Container>
+          {/* Cards */}
+          <Box
+  sx={{
+    bgcolor: 'background.paper',
+    pt: 8,
+    pb: 6,
+    display: 'flex', // Ensure full-width container
+    flexDirection: 'column', // Stack cards vertically
+    alignItems: 'center', // Center card container
+    // Add subtle background gradient (optional)
+    backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(245, 245, 245, 0.85))`,
+  }}
+>
+  <Typography variant="h4" align="center" color="textPrimary" gutterBottom>
+    Why EDU CONNECT?
+  </Typography>
+  <Container maxWidth="md" component="main" sx={{ pt: 4, pb: 6 }}>
+    <Grid container spacing={4} alignItems="center"> {/* Adjust spacing and alignment */}
+      {tiers.map((tier) => (
+        <Grid item key={tier.title} xs={12} md={4}>
+          <Card sx={{ boxShadow: 3, borderRadius: 4 }}> {/* Apply subtle shadow and rounded corners */}
+            <CardHeader
+              title={tier.title}
+              titleTypographyProps={{ align: 'center', sx: { fontWeight: 'bold' } }} // Bold title
+              subheaderTypographyProps={{ align: 'center', color: 'textSecondary' }}
+              sx={{
+                backgroundColor: (theme) =>
+                  theme.palette.mode === 'light'
+                    ? theme.palette.primary.main
+                    : theme.palette.secondary.main,
+                color: (theme) => theme.palette.getContrastText(theme.palette.background.paper),
+              }}
+            />
+            <CardContent>
+              <Typography variant="body1" align="center" color="textPrimary">
+                {tier.price}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
+    </Grid>
+  </Container>
+</Box>
       <Footer/>
     </div>
   )

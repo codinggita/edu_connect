@@ -19,10 +19,10 @@ const Navbar = () => {
         </Box>
 
         <Stack direction='row' spacing={2}>
-            <Button color='inherit'><Link to="/feature">Features</Link></Button>
-            <Button color='inherit'><Link to="/pricing">Pricing</Link></Button>
+            <Button color='inherit'><Link to="/courses">Courses</Link></Button>
             <Button color='inherit'><Link to="/about">About</Link></Button>
             <Button color='inherit'><Link to="/login">Login</Link></Button>
+            <Button color='inherit'><Link to="/signup">Sign Up</Link></Button>
         </Stack>
           
 
