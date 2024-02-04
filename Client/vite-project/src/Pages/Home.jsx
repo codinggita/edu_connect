@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
 import Grid from '@mui/material/Grid';
 import Box  from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -100,10 +100,10 @@ const Home = () => {
     bgcolor: 'background.paper',
     pt: 8,
     pb: 6,
-    display: 'flex', // Ensure full-width container
-    flexDirection: 'column', // Stack cards vertically
-    alignItems: 'center', // Center card container
-    // Add subtle background gradient (optional)
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center', 
+    //subtle background gradient(optional)
     backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(245, 245, 245, 0.85))`,
   }}
 >
@@ -111,10 +111,10 @@ const Home = () => {
     Why EDU CONNECT?
   </Typography>
   <Container maxWidth="md" component="main" sx={{ pt: 4, pb: 6 }}>
-    <Grid container spacing={4} alignItems="center"> {/* Adjust spacing and alignment */}
+    <Grid container spacing={4} alignItems="center"> 
       {tiers.map((tier) => (
         <Grid item key={tier.title} xs={12} md={4}>
-          <Card sx={{ boxShadow: 3, borderRadius: 4 }}> {/* Apply subtle shadow and rounded corners */}
+          <Card sx={{ boxShadow: 3, borderRadius: 4 }}> {/* subtle shadow and rounded corners */}
             <CardHeader
               title={tier.title}
               titleTypographyProps={{ align: 'center', sx: { fontWeight: 'bold' } }} // Bold title

@@ -1,26 +1,14 @@
 import React from 'react'
-import {Typography,Box,Stack, Button, AppBar,Card,CardActions, CardMedia,CssBaseline,Grid,Toolbar,Container} from '@mui/material'
+import {Typography,Box,CssBaseline,Container} from '@mui/material'
 import UserProfilePage from './UserProfilePage'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
 
 
 const About = () => {
   return (
     <>
     <CssBaseline/>
-    {/* <main>
-      <div>
-        <Container maxWidth="sm">
-          <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-            About Us
-          </Typography>
-          <Typography variant="h5" align="center" color="textSecondary" paragraph>
-            Hello Everyone this is a About page. 
-          </Typography>
-        </Container>
-      </div>
-    </main> */}
     <Navbar/>
     <Box sx={{
             bgcolor: 'background.paper',

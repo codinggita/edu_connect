@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container,Grid,Card,CardMedia,CardActions,CardContent,Button,Typography, Box,Stack,Divider} from '@mui/material'
+import { Container,Grid,Card,CardMedia,CardActions,CardContent,Button,Typography, Box,Divider} from '@mui/material'
 import Accordion from '@mui/material/Accordion';
 import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Navbar from './Navbar'
+import Navbar from '../Components/Navbar'
 
 
 const cards=[1,2,3,4,5,6,7,8,9]
@@ -14,13 +14,10 @@ const subjects = ['Math', 'English', 'Science', 'History'];
 
 
 function Course() {
-    const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+  
   return (
     <div>
+      
         {/* Navbar */}
 
         <Navbar/>
@@ -122,6 +119,7 @@ function Course() {
         <Divider sx={{ mt: 2 }}/>
         <Box sx={{ mt: 2 }} />
        
+       {/* Footer */}
 
         <footer sx={{ bgcolor: 'background.paper', p: 6}}>
       <Typography variant="h6" align="center" gutterBottom>Footer</Typography>
