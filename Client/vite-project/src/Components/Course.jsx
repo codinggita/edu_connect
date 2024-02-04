@@ -1,11 +1,12 @@
 import React from 'react'
 import { Container,Grid,Card,CardMedia,CardActions,CardContent,Button,Typography, Box,Stack,Divider} from '@mui/material'
+import Accordion from '@mui/material/Accordion';
+import AccordionActions from '@mui/material/AccordionActions';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Navbar from './Navbar'
 
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 
 const cards=[1,2,3,4,5,6,7,8,9]
 
@@ -24,7 +25,7 @@ function Course() {
 
         <Navbar/>
 
-         {/* Words */}
+         {/* Heading */}
          <main>
         <Box sx={{
     bgcolor: 'background.paper',
@@ -34,33 +35,46 @@ function Course() {
   }} >
 <Container maxWidth="sm">
   <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-    Course Catalog
+    Courses
   </Typography>
-  <Typography variant="h5" align="center" color="textSecondary" paragraph>
-    Hello Everyone this is a Course Catalog  
-  </Typography>
+ 
 </Container>
 
 
-{/* Select */}
+{/* Accordion */}
 <Box sx={{mt: 4}}>
-<FormControl sx={{ width: 200 }}>
-        <InputLabel id="demo-simple-select-label">Course</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
-          label="Age"
-          onChange={handleChange}
-        >
-          
-          {subjects.map((subject) => (
-            <MenuItem key={subject} value={subject}>
-              {subject}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+<Typography variant="h5" align="center" color="textSecondary" paragraph>
+    Course Catalog  
+  </Typography>
+
+    {subjects.map((subject)=>(
+      <Accordion key={subject}>
+       <AccordionSummary
+        expandIcon={<ExpandMoreIcon />
+      }
+      sx={{
+        fontFamily: 'Arial',
+        
+      }} 
+      >
+        {subject}
+      </AccordionSummary>
+      <AccordionDetails  sx={{
+        fontFamily: 'Arial',
+        
+      }} >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        malesuada lacus ex, sit amet blandit leo lobortis eget.
+      </AccordionDetails>
+      <AccordionActions sx={{ justifyContent: 'flex-start' }}>
+        <Button variant='contained'>Visit Course</Button>
+       
+      </AccordionActions>
+    </Accordion>
+
+    ))}
+      
+      
       </Box>
       </Box>
 
