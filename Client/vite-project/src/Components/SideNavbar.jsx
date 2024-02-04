@@ -103,7 +103,7 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {matters.map((matter) => (
-            <ListItem key={matter} disablePadding sx={{ display: 'block' }} onClick={()=>{navigate(matter.route)}}>
+            <ListItem key={matter} disablePadding sx={{ display: 'block' }} >
               <ListItemButton
                 sx={{
                   minHeight: 48,

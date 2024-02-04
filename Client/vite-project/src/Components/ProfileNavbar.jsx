@@ -173,7 +173,7 @@ export default function ProfileNavbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" elevation={0} sx={{ backgroundColor: "#ffffff", color: "black" }}>
         <Toolbar>
           <IconButton
             size="large"
