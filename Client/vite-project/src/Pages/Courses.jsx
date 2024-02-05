@@ -6,14 +6,16 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Navbar from '../Components/Navbar'
+import { useNavigate } from 'react-router-dom';
 
 
-const cards=[1,2,3,4,5,6,7,8,9]
+const cards=[1,2,3,4,5,6,]
 
-const subjects = ['Math', 'English', 'Science', 'History'];
+const subjects = ['Math', 'English', 'Science', 'Economics','Computer Programming','Psychology','Business Administration','Pre-Med',];
 
 
 function Course() {
+  const navigate=useNavigate();
   
   return (
     <div>
@@ -64,7 +66,7 @@ function Course() {
         malesuada lacus ex, sit amet blandit leo lobortis eget.
       </AccordionDetails>
       <AccordionActions sx={{ justifyContent: 'flex-start' }}>
-        <Button variant='contained'>Visit Course</Button>
+        <Button variant='contained' onClick={()=>{navigate("/courses/coursecontent")}}>Visit Course</Button>
        
       </AccordionActions>
     </Accordion>
@@ -102,7 +104,7 @@ function Course() {
                  </CardContent>
                  <CardActions>
                    
-                   <Button size="small" color="primary" variant="outlined">Open</Button>
+                   <Button size="small" color="primary" variant="contained" onClick={()=>{navigate("/courses/coursecontent")}}>Visit</Button>
                  </CardActions>
  
                </Card>

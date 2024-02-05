@@ -18,20 +18,12 @@ import { useAppStore } from '../appStore';
 
 const drawerWidth = 240;
 
-const matters=[{text:'Home',
-  route:'/'
-  
+const matters=[{id: 1,text:'Home',
+  route:'/profile'  
 },
-{text:'About',
-  route:'/about'
-  
-},
-{text:'Mentor',
-  route:'/mentors'
-  
-},
-{text:'Settings',
-  route:'/settings'
+
+{id: 2,text:'Settings',
+  route:'/profile/settings'
   
 },]
 
@@ -103,8 +95,7 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {matters.map((matter) => (
-            // onClick={()=>{navigate(matter.route)}} add this line in listitem once routes for profile are defined
-            <ListItem key={matter} disablePadding sx={{ display: 'block' }} >
+            <ListItem key={matter.id} disablePadding sx={{ display: 'block' }} onClick={()=>{navigate(matter.route)}}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
