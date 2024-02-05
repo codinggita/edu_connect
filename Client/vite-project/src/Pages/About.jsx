@@ -1,8 +1,8 @@
 import React from 'react'
-import {Typography,Box,CssBaseline,Container} from '@mui/material'
-import UserProfilePage from './UserProfilePage'
+import {Typography,Box,CssBaseline,Card,CardActions, CardMedia,CardContent,Button,Container,Divider} from '@mui/material'
+
 import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
+import Image from "./Assests/mateo-avila-chinchilla-x_8oJhYU31k-unsplash.jpg"
 
 
 const About = () => {
@@ -41,9 +41,38 @@ const About = () => {
     Join us on our journey to redefine the way students learn and collaborate. Together, let's embrace the power of knowledge exchange and create a brighter future for education.    </Typography>
 
         </Container>
+
+        <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        component="img"
+        alt="Amon"
+        height="180"
+        image={Image}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Amon
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        Hi there! I'm Amon, a highly motivated and enthusiastic 3rd year full-stack developer.I'm passionate about building innovative and user-friendly web applications, and I'm always eager to learn new technologies and expand my skillset. 
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        If you're interested in connecting, please feel free to reach out to me on LinkedIn or GitHub.        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" variant='contained'>Contact Me</Button>
+        
+      </CardActions>
+    </Card>
       </Box>
-    <UserProfilePage/>
-    <Footer/>
+
+      <Divider sx={{ mt: 2 }}/>
+        <Box sx={{ mt: 2 }} />
+    
+    <footer sx={{ bgcolor: 'background.paper', p: 6}}>
+      <Typography variant="h6" align="center" gutterBottom>Footer</Typography>
+      <Typography variant="subtitle1" align="center" gutterBottom>Courses page...</Typography>
+    </footer>
     </>
   )
 }
