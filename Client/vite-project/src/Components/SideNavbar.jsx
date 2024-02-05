@@ -103,6 +103,7 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {matters.map((matter) => (
+            // onClick={()=>{navigate(matter.route)}} add this line in listitem once routes for profile are defined
             <ListItem key={matter} disablePadding sx={{ display: 'block' }} >
               <ListItemButton
                 sx={{

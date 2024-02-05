@@ -11,6 +11,7 @@ import Profile from "./Pages/Profile.jsx";
 
 
 
+
 function App() {
 
   return (
@@ -19,6 +20,8 @@ function App() {
     
     <Routes>
         <Route path="/" exact element={<Home/>} />
+        
+
         <Route path="/courses" element={<Course/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/pricing" element={<Pricing/>}/>
