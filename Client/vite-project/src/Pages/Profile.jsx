@@ -7,6 +7,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Stack from "@mui/material/Stack";
 import "./Profile.css"
+import Table from "../Components/Table"
 
 function Home() {
   return (
@@ -22,24 +23,13 @@ function Home() {
           <Grid container spacing={2}>
             <Grid item xs={8}>
               <Stack spacing={2} direction="row">
-                <Card sx={{ maxWidth: 49+"%",height:150 }} className="gradient">
+                <Card sx={{ width:"100%",height:150 }} className="gradient">
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div" sx={{color:"#ffffff"}}>
-                      Lizard
+                      My Name
                     </Typography>
                     <Typography variant="body2" color="text.secondary" sx={{color:  "#cbcbcb"}}>
-                      Lizards 
-                    </Typography>
-                  </CardContent>
-                </Card>
-
-                <Card sx={{ maxWidth: 49+"%",height:150 }}  className="gradientlight">
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" sx={{color:  "#ffffff"}}>
-                      Lizard
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary" sx={{color:  "#cbcbcb"}}>
-                      Lizards 
+                      About 
                     </Typography>
                   </CardContent>
                 </Card>
@@ -71,7 +61,9 @@ function Home() {
             <Grid item xs={8}>
             <Card sx={{ height:60 + "vh" }}>
                   <CardContent>
-                    
+                    <Typography>Content</Typography>
+                    <Table/>
+
                   </CardContent>
                 </Card>
             </Grid>

@@ -21,9 +21,12 @@ const drawerWidth = 240;
 const matters=[{id: 1,text:'Home',
   route:'/profile'  
 },
+{id: 2,text:'Mentor',
+  route:'/profile/mentors'  
+},
 
-{id: 2,text:'Settings',
-  route:'/profile/settings'
+{id: 2,text:'Edit',
+  route:'/profile/edit'
   
 },]
 

@@ -10,7 +10,7 @@ import Course from "./Pages/Courses.jsx";
 import Profile from "./Pages/Profile.jsx";
 import Coursecontent from "./Pages/Coursecontent.jsx"
 import Profilementors from "./Pages/Profilementors.jsx";
-import Profilesettings from "./Pages/Profilesettings.jsx";
+import Profileedit from "./Pages/Profileedit.jsx";
 
 
 
@@ -29,7 +29,7 @@ function App() {
         <Route path="/courses/coursecontent" element={<Coursecontent/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/profile/mentors" element={<Profilementors/>}/>
-        <Route path="/profile/settings" element={<Profilesettings/>}/>
+        <Route path="/profile/edit" element={<Profileedit/>}/>
         <Route path="/pricing" element={<Pricing/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/login" element={<Login/>}/>

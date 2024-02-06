@@ -1,34 +1,41 @@
 import express from "express";
+import cors from "cors"
+import dotenv from 'dotenv';
+
+dotenv.config();
 const app = express();
 const port = 8000;
 
 app.use(express.json());
+app.use(cors());
 
 const mentors = [{
+    id:1,
     name: "Akshay",
     experince: 2,
     university: "GTU",
     ratings: 3,
 
 }, {
+    id:2,
     name: "Manish",
     experince: 2,
     university: "LPU",
     ratings: 2,
 
-}, {
+}, {    id:3,
     name: "Aradhya",
     experince: 4,
     university: "VIT",
     ratings: 4,
 
-}, {
+}, {    id:4,
     name: "John",
     experince: 4,
     university: "CU",
     ratings: 3,
 
-}, {
+}, {    id:5,
     name: "Tom",
     experince: 3,
     university: "LPU",
