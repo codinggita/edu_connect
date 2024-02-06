@@ -5,10 +5,46 @@ import Grid from '@mui/material/Grid';
 import Box  from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { CssBaseline, Stack, Card, CardHeader, CardContent, CardActions } from '@mui/material';
-import {Container} from '@mui/material';
+import {Container,Divider} from '@mui/material';
 import {Button} from '@mui/material';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import {Carousel} from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import TestimonialCard from '../Components/TestimonialCard';
 
+
+
+const testimonials = [
+  {
+    id: 1,
+    name: 'John Doe',
+    company: 'ACME Corporation',
+    avatar: 'https://source.unsplash.com/random/100x100?face',
+    quote: 'This product is amazing! It saved me a lot of time and effort.',
+  },
+  {
+    id: 2,
+    name: 'John Doe',
+    company: 'ACME Corporation',
+    avatar: 'https://source.unsplash.com/random/100x100?face',
+    quote: 'This product is amazing! It saved me a lot of time and effort.',
+  },
+  {
+    id: 3,
+    name: 'John Doe',
+    company: 'ACME Corporation',
+    avatar: 'https://source.unsplash.com/random/100x100?face',
+    quote: 'This product is amazing! It saved me a lot of time and effort.',
+  },
+  {
+    id: 4,
+    name: 'John Doe',
+    company: 'ACME Corporation',
+    avatar: 'https://source.unsplash.com/random/100x100?face',
+    quote: 'This product is amazing! It saved me a lot of time and effort.',
+  },
+ 
+];
 
 const tiers = [
   {
@@ -33,111 +69,157 @@ const tiers = [
 ];
 
 const Home = () => {
+  const navigate=useNavigate();
+
   return (
     <div>
       <Navbar/>
+      <CssBaseline/>
 
       {/* main page */}
+      
       <Grid container component="main" sx={{ height: '100vh' }}>
-        <CssBaseline/>
-      <Grid
+        <Grid
           item
-          xs={6} sm={4} md={7}
+          xs={6}
+          sm={4}
+          md={7}
           sx={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1572985353481-b9064d14b646?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundImage: 'url(https://images.unsplash.com/photo-1572985353481-b9064d14b646?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', // Replace with actual image URL
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            position: 'relative', 
-            '&::before': {
-              content: '""',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-              mask: 'url(https://images.unsplash.com/photo-1572985353481-b9064d14b646?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'
-            },
+            backgroundColor: (theme) =>
+              theme.palette.mode === 'light'
+                ? theme.palette.grey[50]
+                : theme.palette.grey[900], // Use theme colors for consistency
+            // ...other styles
           }}
         />
-          <Grid item xs={6} sm={8} md={5}>
-          <Box sx={{
-            bgcolor: 'background.paper',
-            pt: 20,
-            pb: 6,
-          }} >
-        <Container maxWidth="sm">
-          <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-          LEARN, CONNECT, THRIVE
-          </Typography>
-          <Typography variant="h4" align="center" color="textPrimary" gutterBottom>
-          Where Education Meets Interactivity.
-          </Typography>
-          <Typography variant="h5" align="center" color="textSecondary" paragraph>
-          The premier platform for cultivating meaningful connections, acquiring knowledge, and seeking expert guidance within the confines of your academic institution.   
-          </Typography>
+        <Grid item xs={6} sm={8} md={5}>
+          <Box
+            sx={{
+              bgcolor: 'background.paper',
+              p: 4, // Use consistent spacing
+              pt: 18, // Adjust top padding for visual balance
+            }}
+          >
+            <Container maxWidth="sm">
+              <Typography variant="h2" align="center" gutterBottom>
+                LEARN, CONNECT, THRIVE
+              </Typography>
+              <Typography variant="h4" align="center" gutterBottom>
+                Where Education Meets Interactivity.
+              </Typography>
+              <Typography variant="body1" align="center" paragraph>
+                The premier platform for cultivating meaningful connections,
+                acquiring knowledge, and seeking expert guidance within the
+                confines of your academic institution.
+              </Typography>
+              <Stack direction="row" spacing={2} justifyContent="center" sx={{mt:4}}>
+                <Button variant="contained" onClick={()=>{navigate("/login")}}>Teachers Here</Button>
+                <Button variant="outlined" onClick={()=>{navigate("/login")}}>Learners Here</Button>
+              </Stack>
+            </Container>
+          </Box>
+        </Grid>
+      </Grid>
 
-          <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button variant="contained">Teachers Here</Button>
-              <Button variant="outlined">Learners Here</Button>
-            </Stack>
+      <Box
+        sx={{
+          p: 4,
+          pt: 6, // Adjust top padding
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          
+        }}
+      >
+        <Typography variant="h4" align="center" gutterBottom>
+          Why EDU CONNECT?
+        </Typography>
+        <Container maxWidth="md">
+          <Grid container spacing={4} alignItems="center" >
+            {tiers.map((tier) => (
+              <Grid item key={tier.title} xs={12} md={4} >
+                <Card
+                  sx={{
+                    boxShadow: 3,
+                    borderRadius: 4,
+                    // backgroundColor: (theme) =>
+                    //   theme.palette.mode === 'light'
+                    //     ? theme.palette.primary.main
+                    //     : theme.palette.secondary.main,
+                    backgroundColor: '#6CB4EE'
+                  }}
+                >
+                  <CardHeader
+                    title={tier.title}
+                    titleTypographyProps={{ align: 'center', fontWeight: 'bold' }}
+                    subheaderTypographyProps={{ align: 'center' }}
+                  />
+                  <CardContent>
+                    <Typography variant="body1" align="center">
+                      {tier.price}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
         </Container>
       </Box>
-          </Grid>
-          </Grid>
 
-          {/* Cards */}
-          <Box
-  sx={{
-    bgcolor: 'background.paper',
-    pt: 8,
-    pb: 6,
-    display: 'flex', 
-    flexDirection: 'column', 
-    alignItems: 'center', 
-    //subtle background gradient(optional)
-    backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(245, 245, 245, 0.85))`,
-  }}
->
-  <Typography variant="h4" align="center" color="textPrimary" gutterBottom>
-    Why EDU CONNECT?
-  </Typography>
-  <Container maxWidth="md" component="main" sx={{ pt: 4, pb: 6 }}>
-    <Grid container spacing={4} alignItems="center"> 
-      {tiers.map((tier) => (
-        <Grid item key={tier.title} xs={12} md={4}>
-          <Card sx={{ boxShadow: 3, borderRadius: 4 }}> {/* subtle shadow and rounded corners */}
-            <CardHeader
-              title={tier.title}
-              titleTypographyProps={{ align: 'center', sx: { fontWeight: 'bold' } }} // Bold title
-              subheaderTypographyProps={{ align: 'center', color: 'textSecondary' }}
-              sx={{
-                backgroundColor: (theme) =>
-                  theme.palette.mode === 'light'
-                    ? theme.palette.primary.main
-                    : theme.palette.secondary.main,
-                color: (theme) => theme.palette.getContrastText(theme.palette.background.paper),
-              }}
-            />
-            <CardContent>
-              <Typography variant="body1" align="center" color="textPrimary">
-                {tier.price}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+<Box sx={{bgcolor: 'background.paper',
+mt:4,p: 4,}}>
+  <Typography variant="h4" align="center" color="textPrimary" gutterBottom>Read What Others
+Have To Say</Typography>
+<Container maxWidth="sm">
+      <Carousel showArrows={true} emulateTouch={true} autoPlay={true} infiniteLoop={true}>
+      {testimonials.map((testimonial) => (
+        <TestimonialCard key={testimonial.id} {...testimonial} />
       ))}
-    </Grid>
-  </Container>
+    </Carousel>
+</Container>
 </Box>
+
+<Box>
+      <Container >
+   <Grid container spacing={4}>
+   <Grid item xs={12} >
+    <Card sx={{backgroundColor:"#6CB4EE",height: 230,borderRadius: "10px"}}>
+    <CardContent sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+    
+      <Typography variant="h4" color="textPrimary" gutterBottom>Teachers</Typography>
+      <Typography variant="h5" color="textSecondary" >We empower teachers to support their entire classroom.</Typography><Typography variant="h5" color="textSecondary" gutterBottom> 90% of teachers who have used Edu Connect have found us effective.</Typography>
+      <Button variant="contained" color="primary" sx={{ mt: 2 }} onClick={()=>{navigate("/login")}}>Teachers</Button>
+   
+  </CardContent>
+
+    </Card>
+
+   </Grid>
+   <Grid item xs={12} >
+    <Card sx={{backgroundColor:"#6CB4EE",height: 230,borderRadius: "10px"}}>
+    <CardContent sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+    
+    <Typography variant="h4" color="textPrimary" gutterBottom>Learners</Typography>
+    <Typography variant="h5" color="textSecondary" >You can learn anything.</Typography>
+    <Typography variant="h5" color="textSecondary" gutterBottom>Build a deep, solid understanding in math, science, grammar, history, SAT®, and more.</Typography>
+    <Button variant="contained" color="primary" sx={{ mt: 2 }} onClick={()=>{navigate("/login")}}>Learners</Button>
+ 
+</CardContent>
+
+    </Card>
+
+   </Grid>
+   </Grid>
+
+   </Container>
+      </Box>
+
+    
+      
+
       <Footer/>
     </div>
   )
