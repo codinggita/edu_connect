@@ -1,9 +1,19 @@
 import React from 'react'
-import {Typography,Box,CssBaseline,Card,CardActions, CardMedia,CardContent,Button,Container,Divider} from '@mui/material'
-
+import {Typography,Box,CssBaseline,Card,CardActions, CardMedia,CardContent,Button,Container,Divider,ThemeProvider,createTheme, Stack,Grid} from '@mui/material'
 import Navbar from '../Components/Navbar'
-import Image from "./Assests/mateo-avila-chinchilla-x_8oJhYU31k-unsplash.jpg"
+import Amon from './Amon'
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2', // Adjust as needed
+    },
+    secondary: {
+      main: '#f5f5f5', // Light gray for cards
+    },
+  },
+  spacing: 4, // Global spacing
+});
 
 const About = () => {
   return (
@@ -21,58 +31,67 @@ const About = () => {
     
             backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95))`,
           }} >
-        <Container maxWidth="sm">
-          <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-            About Us
-          </Typography>
-          <Typography variant="body1" align="center" color="textSecondary" component="div" sx={{ mb: 6 }}>
-      Hello Everyone! Welcome to our platform, a revolutionary web application designed to foster
-      interactive learning experiences and facilitate the sharing of educational resources among
-      students worldwide.
-    </Typography>
-    <Typography variant="body1" align="center" color="textSecondary" component="div" sx={{ mb: 6 }}>
-      Our mission is to unite students from global colleges, offering a diverse array of courses
-      presented by their peers.
-    </Typography>
-    <Typography variant="body1" align="center" color="textSecondary" component="div" sx={{ mb: 6 }}>
-    With our platform, users have the freedom to explore a wide range of courses tailored to their interests and academic needs. From language studies to advanced mathematics, there's something for everyone.
-    </Typography>
-    <Typography variant="body1" align="center" color="textSecondary" component="div" sx={{ mb: 6 }}>
-    Join us on our journey to redefine the way students learn and collaborate. Together, let's embrace the power of knowledge exchange and create a brighter future for education.    </Typography>
-
-        </Container>
-
-        <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        alt="Amon"
-        height="180"
-        image={Image}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Amon
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-        Hi there! I'm Amon, a highly motivated and enthusiastic 3rd year full-stack developer.I'm passionate about building innovative and user-friendly web applications, and I'm always eager to learn new technologies and expand my skillset. 
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-        If you're interested in connecting, please feel free to reach out to me on LinkedIn or GitHub.        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" variant='contained'>Contact Me</Button>
+<ThemeProvider theme={theme}>
+<Container maxWidth="lg">
+        <Card sx={{ bgcolor: 'secondary.main', borderRadius: 4, boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)' }}>
+          <CardContent sx={{ p: 6 }}>
+            <Typography variant="h2" align="center" color="textPrimary" >
+              About Us
+            </Typography>
+            <Divider/>
+            <Typography variant="body1" align="center" color="textSecondary" component="div" sx={{ mb: 6,mt:6 }}>
+              Hello Everyone! Welcome to our platform, a revolutionary web application designed to foster
+              interactive learning experiences and facilitate the sharing of educational resources among
+              students worldwide.
+            </Typography>
+              <Typography variant="body1" align="center" color="textSecondary" component="div" sx={{ mb: 6 }}>
+      Our mission is to unite students from global colleges, offering a diverse array of courses
+      presented by their peers.
+    </Typography>
+    <Typography variant="body1" align="center" color="textSecondary" component="div" sx={{ mb: 6 }}>
+    With our platform, users have the freedom to explore a wide range of courses tailored to their interests and academic needs. From language studies to advanced mathematics, there's something for everyone.
+    </Typography>
+    <Typography variant="body1" align="center" color="textSecondary" component="div" sx={{ mb: 6 }}>
+    Join us on our journey to redefine the way students learn and collaborate. Together, let's embrace the power of knowledge exchange and create a brighter future for education.    </Typography>
+          </CardContent>
+        </Card>
+      </Container>
+</ThemeProvider>
         
-      </CardActions>
-    </Card>
-      </Box>
-
-      <Divider sx={{ mt: 2 }}/>
-        <Box sx={{ mt: 2 }} />
+        <Box sx={{mt:4}}/>
+        <Typography variant='h2'>Our Team</Typography>
+        
+<Stack direction="row" spacing={2}>
+<Amon/>
+<Amon/>
+<Amon/>
     
-    <footer sx={{ bgcolor: 'background.paper', p: 6}}>
-      <Typography variant="h6" align="center" gutterBottom>Footer</Typography>
-      <Typography variant="subtitle1" align="center" gutterBottom>Courses page...</Typography>
-    </footer>
+</Stack>
+        
+    
+      </Box>
+      <Divider />
+
+
+        <Box sx={{ mt: 2}} />
+    
+        <footer sx={{ bgcolor: 'background.paper', p: 6 }}>
+  <Typography variant="h6" align="center" gutterBottom>Footer</Typography>
+  <Grid container justifyContent="center" spacing={2}>
+    <Grid item>
+      <Button variant="text" href="#">Home</Button>
+    </Grid>
+    <Grid item>
+      <Button variant="text" href="#">About Us</Button>
+    </Grid>
+    <Grid item>
+      <Button variant="text" href="#">Contact</Button>
+    </Grid>
+  </Grid>
+  <Typography variant="body2" color="text.secondary" align="center">
+      Copyright © 
+    </Typography>
+</footer>
     </>
   )
 }

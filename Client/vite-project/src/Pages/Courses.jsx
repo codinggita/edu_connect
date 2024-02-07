@@ -7,6 +7,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Navbar from '../Components/Navbar'
 import { useNavigate } from 'react-router-dom';
+import {Carousel} from 'react-responsive-carousel';
+
 
 
 const cards=[1,2,3,4,5,6,]
@@ -32,19 +34,25 @@ function Course() {
     pb: 6,
     display: 'flex', flexDirection: 'column', alignItems: 'center'
   }} >
-<Container maxWidth="sm">
-  <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
+    
+    <Container maxWidth="lg" sx={{backgroundColor:'#13274F',borderRadius:"10px",height:100}}>
+  <Typography variant="h2" align="center" color="#F5F5F5" gutterBottom>
     Courses
   </Typography>
  
 </Container>
+    
+
 
 
 {/* Accordion */}
 <Box sx={{mt: 4}}>
-<Typography variant="h5" align="center" color="textSecondary" paragraph>
+<Container maxWidth="lg" sx={{backgroundColor:'#0066b2',borderRadius:"10px",height:40}}>
+<Typography variant="h5" align="center" color="#FFFFFF" paragraph>
     Course Catalog  
   </Typography>
+  </Container>
+
 
     {subjects.map((subject)=>(
       <Accordion key={subject}>
@@ -84,10 +92,29 @@ function Course() {
         <Typography variant="h5" align="center" color="textSecondary" paragraph>
     Trending Courses  
   </Typography>
-          <Grid container spacing={4} sx={{ mt: 2 }}>
-            {cards.map((card)=>(
 
-               <Grid item key={card} xs={12} sm={6} md={4}>
+  <Container maxWidth="lg">
+      <Carousel showArrows={true} emulateTouch={true} autoPlay={true} infiniteLoop={true} slidesToShow={2}>
+      <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                 <CardMedia 
+                 component="div"
+                 sx={{
+                   // 16:9
+                   pt: '56.25%',
+                 }}
+                 image="http://source.unsplash.com/random"
+                 title="Image title"
+                 />
+                 <CardContent sx={{ flexGrow: 1 }}>
+                   <Typography gutterBottom variant="h5">Heading</Typography>
+                   <Typography>This is cardMedia</Typography>
+                 </CardContent>
+                 <CardActions sx={{ display: 'flex', justifyContent: 'center',mb: 3 }}>
+                   
+                   <Button size="small" color="primary" variant="contained" onClick={()=>{navigate("/courses/coursecontent")}}>Visit</Button>
+                 </CardActions>
+ 
+               </Card>
                <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                  <CardMedia 
                  component="div"
@@ -102,19 +129,34 @@ function Course() {
                    <Typography gutterBottom variant="h5">Heading</Typography>
                    <Typography>This is cardMedia</Typography>
                  </CardContent>
-                 <CardActions>
+                 <CardActions sx={{ display: 'flex', justifyContent: 'center',mb: 3 }}>
                    
                    <Button size="small" color="primary" variant="contained" onClick={()=>{navigate("/courses/coursecontent")}}>Visit</Button>
                  </CardActions>
  
                </Card>
-             </Grid>
-             
-
-
-            ))}
-           
-          </Grid>
+               <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                 <CardMedia 
+                 component="div"
+                 sx={{
+                   // 16:9
+                   pt: '56.25%',
+                 }}
+                 image="http://source.unsplash.com/random"
+                 title="Image title"
+                 />
+                 <CardContent sx={{ flexGrow: 1 }}>
+                   <Typography gutterBottom variant="h5">Heading</Typography>
+                   <Typography>This is cardMedia</Typography>
+                 </CardContent>
+                 <CardActions sx={{ display: 'flex', justifyContent: 'center',mb: 3 }}>
+                   
+                   <Button size="small" color="primary" variant="contained" onClick={()=>{navigate("/courses/coursecontent")}}>Visit</Button>
+                 </CardActions>
+ 
+               </Card>
+    </Carousel>
+</Container>
         </Container>
         </main>
 
@@ -123,10 +165,23 @@ function Course() {
        
        {/* Footer */}
 
-        <footer sx={{ bgcolor: 'background.paper', p: 6}}>
-      <Typography variant="h6" align="center" gutterBottom>Footer</Typography>
-      <Typography variant="subtitle1" align="center" gutterBottom>Courses page...</Typography>
-    </footer>
+       <footer sx={{ bgcolor: 'background.paper', p: 6 }}>
+  <Typography variant="h6" align="center" gutterBottom>Footer</Typography>
+  <Grid container justifyContent="center" spacing={2}>
+    <Grid item>
+      <Button variant="text" href="#">Home</Button>
+    </Grid>
+    <Grid item>
+      <Button variant="text" href="#">About Us</Button>
+    </Grid>
+    <Grid item>
+      <Button variant="text" href="#">Contact</Button>
+    </Grid>
+  </Grid>
+  <Typography variant="body2" color="text.secondary" align="center">
+      Copyright © 
+    </Typography>
+</footer>
       
     </div>
   )
