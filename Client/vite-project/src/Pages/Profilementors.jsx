@@ -12,7 +12,7 @@ function Profilementors() {
   const [selectedMentor,setSelectedMentor]=useState(null);
 
   useEffect(()=>{
-    axios.get("http://localhost:8000/mentors")
+    axios.get("http://localhost:3000/mentors")
     .then((response) => {
       setMentor(response.data);
     })
@@ -23,7 +23,7 @@ function Profilementors() {
 
   const handleMentorClick=(mentorName)=>{
 
-    axios.get(`http://localhost:8000/mentors/${mentorName}`)
+    axios.get(`http://localhost:3000/mentors/${mentorName}`)
     .then(response=>{
       setSelectedMentor(response.data);
     })

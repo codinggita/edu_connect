@@ -145,10 +145,15 @@
 // });
 
 import express from "express";
+import cors from "cors"
+import dotenv from 'dotenv';
 import mongoose from "mongoose";
+
+dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // Replace with your MongoDB connection string
 const uri = "mongodb://localhost:27017/Courses";
@@ -213,6 +218,25 @@ app.post("/courses", async (req, res) => {
     res.status(201).send("Course added successfully");
   } catch (error) {
     res.status(500).send(error);
+  }
+});
+
+app.delete('/courses/:courseName', async (req, res) => {
+  const { courseName } = req.params;
+  try {
+    const updatedDocument = await CoursesDocument.findOneAndUpdate(
+      { cse: { $elemMatch: { course: courseName } } },
+      { $pull: { cse: { course: courseName } } }
+    );
+
+    if (!updatedDocument) {
+      return res.status(404).json({ message: 'Course not found' });
+    }
+
+    res.status(200).json({ message: 'Course deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting course:', error);
+    res.status(500).json({ message: 'Internal server error' });
   }
 });
 
