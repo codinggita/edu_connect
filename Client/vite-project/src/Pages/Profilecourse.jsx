@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import SideNavbar from '../Components/SideNavbar'
 import ProfileNavbar from '../Components/ProfileNavbar'
-import { Box, Container, Grid, Typography,Stack,Divider,Button } from "@mui/material";
+import { Box, Container, Grid, Typography,Stack,Divider,Button, Snackbar, Alert } from "@mui/material";
 import "./Profilementors.css"
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -16,31 +16,42 @@ import ListItemText from '@mui/material/ListItemText';
 function Profilecourse() {
     const [courses, setCourses] = useState([]);
 
-    const [userInput, setUserInput] = useState('');
-  const [submittedText, setSubmittedText] = useState('');
-
+  const [userInput, setUserInput] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  const [snackbarVariant, setSnackbarVariant] = useState('');
 
   const handleDelete = () => {
     // Send a DELETE request to remove the course
     setIsDeleting(true);
+
+    // Send a DELETE request to remove the course
     axios.delete(`http://localhost:8000/courses/${userInput}`)
       .then(() => {
         console.log('Course deleted successfully.');
-        navigate('/courses'); // Redirect to the course list page
+        setSnackbarMessage('Course deleted successfully!');
+        setSnackbarVariant('success');
+        setOpenSnackbar(true);
+        // navigate('/courses'); // Redirect to the course list page
       })
       .catch((error) => {
         console.error('Error deleting course:', error);
+        setSnackbarMessage('Error deleting course:');
+        setSnackbarVariant('error');
+        setOpenSnackbar(true);
         setIsDeleting(false);
       });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent default form submission behavior
-    setSubmittedText(userInput); // Save user input to submittedText state
     setUserInput(''); // Clear the input field after submission
   };
 
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
     useEffect(() => {
       // Fetch the list of courses from the backend
       axios.get('http://localhost:8000/courses')
@@ -120,6 +131,16 @@ function Profilecourse() {
       {isDeleting ? 'Deleting...' : 'Delete Course'}
       </Button>
       </form>  
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert onClose={handleCloseSnackbar} severity={snackbarVariant}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
                   </CardContent>
                 </Card>
                 

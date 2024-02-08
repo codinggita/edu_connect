@@ -3,7 +3,7 @@ import SideNavbar from '../Components/SideNavbar'
 import ProfileNavbar from '../Components/ProfileNavbar'
 import { Box, Card, Typography } from "@mui/material";
 import "./Profilementors.css"
-import List from "../Components/List"
+
 
 function Profilesettings() {
   return (
