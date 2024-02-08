@@ -21,13 +21,16 @@ const drawerWidth = 240;
 const matters=[{id: 1,text:'Home',
   route:'/profile'  
 },
-{id: 2,text:'Mentor',
-  route:'/profile/mentors'  
+{id: 2,text:'Course',
+  route:'/profile/course'  
 },
 
-{id: 2,text:'Edit',
-  route:'/profile/edit'
+{id: 2,text:'Mentor',
+  route:'/profile/mentors'
   
+},{id: 3,text:'Edit',
+route:'/profile/edit'
+
 },]
 
 const openedMixin = (theme) => ({

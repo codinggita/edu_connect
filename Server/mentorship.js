@@ -1,13 +1,21 @@
 import express from "express";
 import cors from "cors"
 import dotenv from 'dotenv';
+import mongoose from "mongoose";
 
 dotenv.config();
 const app = express();
-const port = 8000;
+const port = 3000;
+
 
 app.use(express.json());
 app.use(cors());
+
+// const uri = "mongodb://localhost:27017/Courses";
+// mongoose.connect(uri);
+
+// const db = mongoose.connection;
+// db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 const mentors = [{
     id:1,

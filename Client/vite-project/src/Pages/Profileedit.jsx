@@ -1,7 +1,7 @@
 import React from 'react'
 import SideNavbar from '../Components/SideNavbar'
 import ProfileNavbar from '../Components/ProfileNavbar'
-import { Box, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import "./Profilementors.css"
 import List from "../Components/List"
 
@@ -14,9 +14,7 @@ function Profilesettings() {
 <Box sx={{ display: "flex" }}>
 <SideNavbar />
 <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-
-<List/>
-    
+    <List/>
 </Box>
 
 </Box>
