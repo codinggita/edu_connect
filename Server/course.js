@@ -156,7 +156,7 @@ app.use(express.json());
 app.use(cors());
 
 // Replace with your MongoDB connection string
-const uri = "mongodb://localhost:27017/Courses";
+const uri = "mongodb+srv://user_01:4pQFgKNoL5LGS5rr@cluster0.2aepu2v.mongodb.net/Courses?retryWrites=true&w=majority";
 mongoose.connect(uri);
 
 const db = mongoose.connection;
@@ -241,7 +241,7 @@ app.delete('/courses/:courseName', async (req, res) => {
 });
 
 // Start the server
-const PORT = 8000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+const port = process.env.PORT;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });

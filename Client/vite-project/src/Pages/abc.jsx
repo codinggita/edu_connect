@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Box, Card, CardContent, Typography, TextField, Button, Snackbar, Alert } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
+const domain =import.meta.env.VITE_REACT_APP_DOMAIN
+
 function Delete() {
   const [userInput, setUserInput] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -15,7 +17,7 @@ function Delete() {
     setIsDeleting(true);
 
     // Send a DELETE request to remove the course
-    axios.delete(`http://localhost:8000/courses/${userInput}`)
+    axios.delete(`${domain}/courses/${userInput}`)
       .then(() => {
         console.log('Course deleted successfully.');
         setSnackbarMessage('Course deleted successfully!');

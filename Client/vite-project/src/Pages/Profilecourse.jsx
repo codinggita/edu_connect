@@ -13,6 +13,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
+const domain =import.meta.env.VITE_REACT_APP_DOMAIN
+
 function Profilecourse() {
     const [courses, setCourses] = useState([]);
 
@@ -27,7 +29,7 @@ function Profilecourse() {
     setIsDeleting(true);
 
     // Send a DELETE request to remove the course
-    axios.delete(`http://localhost:8000/courses/${userInput}`)
+    axios.delete(`${domain}/courses/${userInput}`)
       .then(() => {
         console.log('Course deleted successfully.');
         setSnackbarMessage('Course deleted successfully!');
@@ -54,7 +56,7 @@ function Profilecourse() {
   };
     useEffect(() => {
       // Fetch the list of courses from the backend
-      axios.get('http://localhost:8000/courses')
+      axios.get(`${domain}/courses`)
         .then((response) => {
           setCourses(response.data);
         })
