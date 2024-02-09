@@ -7,7 +7,7 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     myNavbarColor: {
-      main: 'rgba(0, 128, 255, 0.7)', // Blue with 80% opacity
+      main: 'rgba(0, 128, 255, 0.8)', // Blue with 80% opacity
       secondary: 'rgb(245,245,245)'
     },
   },

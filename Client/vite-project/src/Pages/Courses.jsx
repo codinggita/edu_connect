@@ -35,7 +35,7 @@ function Course() {
     display: 'flex', flexDirection: 'column', alignItems: 'center'
   }} >
     
-    <Container maxWidth="lg" sx={{backgroundColor:'#13274F',borderRadius:"10px",height:100}}>
+    <Container maxWidth="lg" sx={{backgroundColor:'#034694',borderRadius:"10px",height:80}} >
   <Typography variant="h2" align="center" color="#F5F5F5" gutterBottom>
     Courses
   </Typography>
@@ -47,7 +47,7 @@ function Course() {
 
 {/* Accordion */}
 <Box sx={{mt: 4}}>
-<Container maxWidth="lg" sx={{backgroundColor:'#0066b2',borderRadius:"10px",height:40}}>
+<Container maxWidth="lg" sx={{backgroundColor:'#0066b2',borderRadius:"10px",height:37}}>
 <Typography variant="h5" align="center" color="#FFFFFF" paragraph>
     Course Catalog  
   </Typography>
@@ -89,9 +89,12 @@ function Course() {
 
         {/* Cards */}
         <Container sx={{py: 10}} maxWidth="md" >
-        <Typography variant="h5" align="center" color="textSecondary" paragraph>
+        <Container maxWidth="lg" sx={{backgroundColor:'#0066b2',borderRadius:"10px",height:53}}>
+        <Typography variant="h4" align="center" color="#FFFFFF" paragraph>
     Trending Courses  
   </Typography>
+        </Container>
+        
 
   <Container maxWidth="lg">
       <Carousel showArrows={true} emulateTouch={true} autoPlay={true} infiniteLoop={true} slidesToShow={2}>
@@ -106,8 +109,8 @@ function Course() {
                  title="Image title"
                  />
                  <CardContent sx={{ flexGrow: 1 }}>
-                   <Typography gutterBottom variant="h5">Heading</Typography>
-                   <Typography>This is cardMedia</Typography>
+                   <Typography gutterBottom variant="h5">Course Name</Typography>
+                   <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ipsam, laudantium sint distinctio assumenda doloremque ipsa ullam molestiae quo adipisci iusto officiis porro architecto vitae esse tenetur impedit cum nemo.</Typography>
                  </CardContent>
                  <CardActions sx={{ display: 'flex', justifyContent: 'center',mb: 3 }}>
                    
@@ -126,8 +129,8 @@ function Course() {
                  title="Image title"
                  />
                  <CardContent sx={{ flexGrow: 1 }}>
-                   <Typography gutterBottom variant="h5">Heading</Typography>
-                   <Typography>This is cardMedia</Typography>
+                   <Typography gutterBottom variant="h5">Course Name</Typography>
+                   <Typography>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, perspiciatis quis eveniet placeat temporibus rerum. Similique quidem error dolorem mollitia, facere totam eveniet suscipit, molestiae sequi doloremque ipsam, cumque voluptates?</Typography>
                  </CardContent>
                  <CardActions sx={{ display: 'flex', justifyContent: 'center',mb: 3 }}>
                    
@@ -146,8 +149,8 @@ function Course() {
                  title="Image title"
                  />
                  <CardContent sx={{ flexGrow: 1 }}>
-                   <Typography gutterBottom variant="h5">Heading</Typography>
-                   <Typography>This is cardMedia</Typography>
+                   <Typography gutterBottom variant="h5">Course Name</Typography>
+                   <Typography>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit facere deleniti saepe architecto voluptas illo, dicta animi deserunt quos dolor aut minima similique iusto natus neque ea aliquam veniam quia?</Typography>
                  </CardContent>
                  <CardActions sx={{ display: 'flex', justifyContent: 'center',mb: 3 }}>
                    

@@ -6,6 +6,8 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { Card, CardContent } from '@mui/material';
 
+const domain =import.meta.env.VITE_REACT_APP_DOMAIN
+
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -22,7 +24,7 @@ function Adminaddcourse() {
 
   useEffect(() => {
     // Fetch the list of courses from the backend
-    axios.get('http://localhost:8000/courses')
+    axios.get(`${domain}/courses`)
       .then((response) => {
         setCourses(response.data);
       })
@@ -48,7 +50,7 @@ function Adminaddcourse() {
     e.preventDefault();
     
     // Send a POST request to add a new course using Axios
-    axios.post('http://localhost:8000/courses', courseData)
+    axios.post(`${domain}/courses`, courseData)
       .then((response) => {
         // Successful response handling
         console.log('Course added successfully.');
@@ -67,7 +69,7 @@ function Adminaddcourse() {
   const handleDelete = () => {
     // Send a DELETE request to remove the course
     setIsDeleting(true);
-    axios.delete(`http://localhost:8000/courses/${courseName}`)
+    axios.delete(`${domain}/courses/${courseName}`)
       .then(() => {
         console.log('Course deleted successfully.');
       
@@ -84,7 +86,7 @@ function Adminaddcourse() {
 
   useEffect(() => {
     // Fetch the current course details to pre-fill the form
-    axios.get(`http://localhost:8000/courses/${courseNameE}`)
+    axios.get(`${domain}/courses/${courseNameE}`)
       .then((response) => {
         setCourseDataE(response.data);
         setIsFetching(false);
@@ -97,7 +99,7 @@ function Adminaddcourse() {
   const handleEditSubmit = (e) => {
     e.preventDefault();
     // Send a PUT request to update the course information
-    axios.put(`http://localhost:8000/courses/${courseNameE}`, courseDataE)
+    axios.put(`${domain}/courses/${courseNameE}`, courseDataE)
       .then(() => {
         console.log('Course information updated successfully.');
         // Redirect or update the UI as needed
