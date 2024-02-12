@@ -1,33 +1,28 @@
-# EduConnect
-
-# Project Initial Report
-
-## Name & Registration Number:
-## Pramit Kumar Dubey (12111903)
-
-## Project Name: EduConnect
+## EduConnect
 
 ### API's documentation: https://documenter.getpostman.com/view/29753054/2s9YymGjLf
 
-### Render deployed link: https://edu-connect-pr.onrender.com
+### Backend deployed link in Render: https://edu-connect-pr.onrender.com
 
-### Netlify continuous deployed link: https://educonnectme.netlify.app/
+### Frontend deployed link in Netlify: https://educonnectme.netlify.app/
 
-### Netlify deployed link: https://educonnect-mui.netlify.app/
+### Design:
 
-### Figma Design Link: https://www.figma.com/file/av8dMDoXAdtqC6tyNxGwdH/Edu-Connect?type=design&node-id=0%3A1&mode=design&t=2HlXrbXXVTdlu6tj-1
+<iframe src="https://www.figma.com/file/av8dMDoXAdtqC6tyNxGwdH/Edu-Connect?type=design&node-id=0%3A1&mode=design&t=2HlXrbXXVTdlu6tj-1
+" title="Figma Design"></iframe>
 
+- Problem Statment:
+ 
+  - Students lack accessible and convenient ways to connect with experienced seniors and alumni from their own college, hindering their ability to get academic help, career guidance, and mentorship.
 
+  - We need a platform or service that facilitates meaningful connections between current students and college alumni, bridging the gap and empowering students to seek academic guidance, mentorship, and career support from experienced individuals.
 
+- Project Description: 
 
-- Which problem Project is Solving?
-
-  - [Give descriptive answer here.]
   - Facilitates novice students in establishing connections, learning, and seeking clarification from seniors within their college. Many students struggle to grasp the subjects taught in class and often find it challenging to address their doubts promptly, leading to a waning interest in the subject. This web application serves as a platform to connect these students with their seniors, enabling them to learn, share knowledge, clarify doubts, and excel in their studies.
 
 - What are existing similar solutions?
 
-  - [Here you should provide list of solution, with sublist of similar existing feaures.]
   - Khan Academy: https://www.khanacademy.org/
   - Chegg Tutors: https://www.chegg.com/
   - Tutor.com: https://www.tutor.com/
@@ -36,14 +31,7 @@
   - Varsity Tutors: https://www.varsitytutors.com/
   - TutorMe: https://tutorme.com/
 
-- How do you want to solve it?
-
-  - [Add your list of possible steps you will take, be as descriptive as possible. Refer to existing similar solution to identify the pain point.]
-  - This application aims to unite students from global colleges. Users can choose from various courses offered by their peers and select specific sessions to attend. The platform will feature comprehensive profiles of seniors, showcasing their skills, teaching abilities, and feedback from current users. Students can actively engage with their seniors through both online and offline events. Additionally, the application allows students to schedule doubt-clearing sessions at their convenience.
-
-- List of features you want to implement.
-
-  - [Add all the possible feature that comes to your mind, take inspiration from existing solution on what's alrady done right, along with how you can make it better.]
+- Features:
 
   - User Profiles: Detailed profiles for both knowledgeable and unfamiliar students with information about their expertise, interests, and learning goals.
 
