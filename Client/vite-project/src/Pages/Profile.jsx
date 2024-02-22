@@ -61,7 +61,7 @@ function Home() {
             <Grid item xs={8}>
             <Card sx={{ height:60 + "vh" }}>
                   <CardContent>
-                    <Typography>Content</Typography>
+                    <Typography>Performance</Typography>
                     <Table/>
 
                   </CardContent>

@@ -108,10 +108,6 @@ export default function SignIn() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
             <Button
               type="submit"
               fullWidth
@@ -124,13 +120,17 @@ export default function SignIn() {
             {success && <Alert severity="success">Sign In sucessful!</Alert>}
 </Box>
 
-            <Grid container justifyContent="flex-end">
+            <Grid container justifyContent="space-between" >
               
               <Grid item>
+                <Button   variant="contained" onClick={()=>navigate("/admin")}>Admin</Button>
+                </Grid>
+                <Grid item>
                 <Link href="#" variant="body2" onClick={()=>navigate("/signup")}>
                   {"Don't have an account? Sign Up"}
                 </Link>
-              </Grid>
+                </Grid>s  
+              
             </Grid>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
