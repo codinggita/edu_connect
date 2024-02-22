@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(cors());
 
 
-const uri = "mongodb+srv://user_01:4pQFgKNoL5LGS5rr@cluster0.2aepu2v.mongodb.net/Students?retryWrites=true&w=majority/";
+const uri = `mongodb+srv://user_01:${process.env.MONGODB_PASSWORD}@cluster0.2aepu2v.mongodb.net/Courses?retryWrites=true&w=majority`;
 mongoose.connect(uri);
 
 const db = mongoose.connection;
