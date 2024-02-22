@@ -12,7 +12,7 @@ import Coursecontent from "./Pages/Coursecontent.jsx"
 import Profilementors from "./Pages/Profilementors.jsx";
 import Profileedit from "./Pages/Profileedit.jsx";
 import Abc from "./Pages/abc.jsx"
-import Profilecourse from "./Pages/ProfileCourse.jsx";
+import Profilecourse from "./Pages/Profilecourse.jsx";
 import Admin from "./Pages/Admin.jsx";
 import Admincourse from "./Pages/Admincourse.jsx";
 
