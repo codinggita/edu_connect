@@ -2,9 +2,9 @@
 
 ### API's documentation: https://documenter.getpostman.com/view/29753054/2s9YymGjLf
 
-### Backend deployed link in Render: https://edu-connect-pr.onrender.com
+### Backend deployed link in Render: https://edu-connect-xds8.onrender.com
 
-### Frontend deployed link in Netlify: https://educonnectme.netlify.app/
+### Frontend deployed link in Netlify: https://educonnectlive.netlify.app/
 
 ### Design: https://www.figma.com/file/av8dMDoXAdtqC6tyNxGwdH/Edu-Connect?type=design&node-id=0%3A1&mode=design&t=2HlXrbXXVTdlu6tj-1
 
