@@ -2,14 +2,18 @@
 
 ### API's documentation: https://documenter.getpostman.com/view/29753054/2s9YymGjLf
 
-### Backend deployed link in Render: https://edu-connect-pr.onrender.com
+### Backend deployed link in Render: https://edu-connect-xds8.onrender.com
 
-### Frontend deployed link in Netlify: https://educonnectme.netlify.app/
+### Frontend deployed link in Netlify: https://educonnectlive.netlify.app/
 
-### Design:
+### Design: https://www.figma.com/file/av8dMDoXAdtqC6tyNxGwdH/Edu-Connect?type=design&node-id=0%3A1&mode=design&t=2HlXrbXXVTdlu6tj-1
 
-<iframe src="https://www.figma.com/file/av8dMDoXAdtqC6tyNxGwdH/Edu-Connect?type=design&node-id=0%3A1&mode=design&t=2HlXrbXXVTdlu6tj-1
-" title="Figma Design"></iframe>
+### ScreenShots:
+![alt text](1.png)
+![alt text](3.png)
+![alt text](2.png)
+![alt text](4.png)
+![alt text](5.png)
 
 - Problem Statment:
  
@@ -67,8 +71,7 @@
   - Privacy Controls: Privacy settings for users to control the visibility of their profiles and learning activities.
    Compliance with data protection regulations.
 
-  - Moderation and Reporting: Moderation tools to monitor content and interactions for inappropriate or unsafe behavior.
-   Reporting mechanisms for users to flag concerns.
+  
 
 
   

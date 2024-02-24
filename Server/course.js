@@ -156,7 +156,7 @@ app.use(express.json());
 app.use(cors());
 
 // Replace with your MongoDB connection string
-const uri = "mongodb+srv://user_01:4pQFgKNoL5LGS5rr@cluster0.2aepu2v.mongodb.net/Courses?retryWrites=true&w=majority";
+const uri = `mongodb+srv://user_01:${process.env.MONGODB_PASSWORD}@cluster0.2aepu2v.mongodb.net/Courses?retryWrites=true&w=majority`;
 mongoose.connect(uri);
 
 const db = mongoose.connection;

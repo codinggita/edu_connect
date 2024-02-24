@@ -28,9 +28,6 @@ const matters=[{id: 1,text:'Home',
 {id: 2,text:'Mentor',
   route:'/profile/mentors'
   
-},{id: 3,text:'Edit',
-route:'/profile/edit'
-
 },]
 
 const openedMixin = (theme) => ({
